@@ -11,17 +11,17 @@ import Button from '../../shared/UI/Button/Button'
 
 const HousesList = () => {
     const baseUrl = 'http://app-homevision-staging.herokuapp.com/api_project/houses'
-    const limit = 10;
+    const limit = 10
 
-    const [page, setPage] = useState(1);
-    const [housesList, setHousesList] = useState([]);
-    const [isFetchingHouses, setIsFetchingHouses] = useState(false);
-    const [error, setError] = useState(null);
+    const [page, setPage] = useState(1)
+    const [housesList, setHousesList] = useState([])
+    const [isFetchingHouses, setIsFetchingHouses] = useState(false)
+    const [error, setError] = useState(null)
 
     useEffect(() => {
         fetchHouses()
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [])
 
     const fetchHouses = async () => {
         setError(null)
@@ -64,7 +64,7 @@ const HousesList = () => {
             }))
     )
 
-    const handleGoToTop = () => window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    const handleGoToTop = () => window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
 
     return (<React.Fragment>
         <InfiniteScroll
