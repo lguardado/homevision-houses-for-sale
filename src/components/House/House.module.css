@@ -1,0 +1,26 @@
+.HouseCard {
+    width: 70vh;
+    margin: 20px auto;
+    display: flex;
+    flex-flow: column;
+    padding: 24px;
+    align-items: center;
+    -webkit-box-shadow: -2px 4px 21px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: -2px 4px 21px -12px rgba(0,0,0,0.75);
+    box-shadow: -2px 4px 21px -12px rgba(0,0,0,0.75);
+    
+}
+
+.HouseOwner {
+    padding: 20px;
+    text-align: center;
+}
+
+.HouseImage {
+    max-width: 100%;
+}
+
+.ContactInfo {
+    display: flex;
+    align-items: center;
+}
