@@ -10,7 +10,7 @@ import styles from './HousesList.module.css'
 import Button from '../../shared/UI/Button/Button'
 
 const HousesList = () => {
-    const baseUrl = 'http://app-homevision-staging.herokuapp.com/api_project/houses'
+    const baseUrl = 'https://app-homevision-staging.herokuapp.com/api_project/houses'
     const limit = 10
 
     const [page, setPage] = useState(1)
@@ -57,14 +57,12 @@ const HousesList = () => {
         </React.Fragment>
     }
 
-    const renderHouses = (
-        (housesList.length > 0) && (
-            housesList.map(house => {
-                return <House key={house.id} item={house} />
-            }))
-    )
+    let renderHouses = housesList.length > 0 ?
+        (housesList.map(house => {
+            return <House key={house.id} item={house} />
+        })) : !error && < div className={styles.Loader} > Loading...</div>
+    const handleGoToTop = () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
 
-    const handleGoToTop = () => window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
 
     return (<React.Fragment>
         <InfiniteScroll
@@ -85,7 +83,7 @@ const HousesList = () => {
         {renderError}
         <div className={styles.GoTopButton}>
             <Button onClick={handleGoToTop}>
-                <FontAwesomeIcon icon={faArrowUp} size={'lg'}/>
+                <FontAwesomeIcon icon={faArrowUp} size={'lg'} />
             </Button>
         </div>
     </React.Fragment>)
